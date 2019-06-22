@@ -1,3 +1,5 @@
+import random
+
 class Card:
 	"""
 	create a single card.
@@ -9,19 +11,19 @@ class Card:
 		face up or down
 	"""
 	pass
-	def __init__(self,value,sign,up=False):
+	def __init__(self,value,value_name,sign,sign_name):
 		# card number (1 to 11)
 		self.value = value
+		self.value_name = value_name
 		# card sign (aces,spades,clubs hearts)
 		self.sign = sign
-		#switcher to turn the card uo or down
-		self.up = up
+		self.sign_name = sign_name
+		
 	
-	def create(self):
+	def outfit(self):
 		"""
 		create the card object
 		"""		
-		pass
 		if self.value == 11:
 			outfit = ' ---\n|'+ self.sign +'  |\n| ' + 'J' + ' |\n|  '+ self.sign +'|\n ---'
 			self.value = 10
@@ -34,27 +36,19 @@ class Card:
 		elif self.value == 1:
 			outfit = ' ---\n|'+ self.sign +'  |\n| ' + 'A' + ' |\n|  '+ self.sign +'|\n ---'
 			self.value = 11
+		elif self.value == 10:
+			outfit = ' ---\n|'+ self.sign +'  |\n| ' + str(self.value) + '|\n|  '+ self.sign +'|\n ---'
+			self.value = 10
 		else:
-			outfit = ' ---\n|'+ self.sign +'  |\n| ' + self.card + ' |\n|  '+ self.sign +'|\n ---'
-		return [outfit,self.value,self.sing,self.up]
+			outfit = ' ---\n|'+ self.sign +'  |\n| ' + str(self.value) + ' |\n|  '+ self.sign +'|\n ---'
+		return outfit
 	
-	def create_card_down():
+	def outfit_card_down(self):
 		"""
 		create the covered card for the dealer
 		"""
-		self.up = False
 		outfit = ' ---\n|###|\n|###|\n|###|\n ---'
-		return [outfit,0,0,self.up]
-	
-	def turn(self):
-		"""
-		turn card up or down
-		"""
-		if self.up == False:
-			self.up = True:
-		else if self.up == True:
-			self.up = False			
-		
+		return outfit
 	
 	
 class Deck:
@@ -76,12 +70,12 @@ class Deck:
 		for each card create the object and add to the complete_deck
 		return the complete_deck
 		"""
-		pass
-		for sign in self.deck_signs:
-			for singlecard in self.deck_vocabulary:
-				self.complete_deck.append(Card.create(singlecard,sign))
-			#Card(str(deckvocabulary[singlecard]),deckvocabulary[singlecard],decksigns[signs]))	
+		for sign_name,sign in self.deck_signs.items():
+			for singlecard_name,singlecard in self.deck_vocabulary.items():
+				self.complete_deck.append(Card(singlecard, singlecard_name, sign, sign_name))
+		return self.complete_deck
 			
+		
 	def __str__(self):
 		return self.complete_deck
 		
@@ -94,3 +88,4 @@ class Deck:
 		"""
 		drawn_card = self.complete_deck.pop()
 		return drawn_card
+		
