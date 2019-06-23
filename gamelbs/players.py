@@ -7,31 +7,30 @@ class player:
 			total score
 			bet
 	"""
-	pass
-	def hand():
-		"""
-		all cards in player's hand
-		"""
-		pass
 	
-	def money():
-		"""
-		player's money
-		"""
-		pass
+	def __init__(self,name,money):
+		self.name = name
+		self.hand = []
+		self.money = money
+		self.score = 0
+		self.betting_money = 0
 		
-	def score():
+	def hit(self,deckname):
 		"""
-		evaluate player's score based on cards
+		ask for a new card.
+		the card is added to the hand
 		"""
-		pass
-	
-	def bet():
+		self.hand.append(deckname.popcard())
+		
+	def bet(self,amount):
 		"""
 		handle betting
 		"""
-		pass
+		self.betting_money = amount
+		self.money -= amount
 	
+	
+
 class cpu:
 	"""
 	define cpu attributes and methods:
@@ -40,17 +39,10 @@ class cpu:
 		total score
 	"""
 	
-	def hand():
+	def hit():
 		"""
 		cpu hand
 		handle first card down
 		"""
 		pass
 		
-	def score():
-		"""
-		evaluate cpu's score based on cards with or without firsty card down
-		"""
-		pass
-	
-
