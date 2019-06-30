@@ -1,10 +1,12 @@
-#mac-OS files
 .DS_Store
 .DS_Store?
-._*
-.Spotlight-V100
 .Trashes
 ehthumbs.db
 Thumbs.db
+._*
+*/__pycache__
 gamelbs/__pycache__/**
-
+.Spotlight-V100
+venv/
+*.swp
+.vscode
