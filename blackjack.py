@@ -52,17 +52,17 @@ def testoutput():
 		#print(AllDeck.complete_deck[i].value_name, 'of' ,AllDeck.complete_deck[i].sign_name)
 		#print(AllDeck.complete_deck[i].value, 'of' ,AllDeck.complete_deck[i].sign)
 	#decide card number. create a hand with first card down. must be part of player and cpu methods
-	#cardnumber = 2
-	#hand = []
-	#for i in range(cardnumber):
-	#	hand.append(AllDeck.popcard())
+	cardnumber = 2
+	hand = []
+	for i in range(cardnumber):
+		hand.append(AllDeck.popcard())
 	
-	#print(hand[0].outfit_card_down())
+	print(hand[0].outfit_card_down())
 	#print(hand[0].value_name, 'of' ,hand[0].sign_name)
-	#for k in range(1,cardnumber):
+	for k in range(1,cardnumber):
+		print(hand[k].outfit())
 		#print(hand[k].outfit())
-		#print(hand[k].outfit())
-		#print(hand[k].value_name, 'of' ,hand[k].sign_name)
+		print(hand[k].value_name, 'of' ,hand[k].sign_name)
 		#print(hand[k].value)
 		#print(hand[k].number)
 
