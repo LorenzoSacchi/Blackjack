@@ -38,11 +38,15 @@ class cpu:
 		first card up or down
 		total score
 	"""
-	
-	def hit():
+
+	def __init__(self):
+		self.name = 'cpu'
+		self.hand = []
+		self.score = 0
+
+	def hit(self,deckname):
 		"""
 		cpu hand
 		handle first card down
 		"""
-		pass
-		
+		self.hand.append(deckname.popcard())

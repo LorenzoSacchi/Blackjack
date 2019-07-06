@@ -1,3 +1,5 @@
+#! /usr/local/bin/python3
+
 import gamelbs.deck as deck
 import gamelbs.game as game
 import gamelbs.players as players
