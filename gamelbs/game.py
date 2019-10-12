@@ -1,3 +1,9 @@
+"""
+general menu schema:
+	
+"""
+
+
 class interface:
 	"""
 	defone the genertal outline of the objects in the game
